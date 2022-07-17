@@ -1,0 +1,41 @@
+<div>
+    <div>
+        <button (click)="toggleEl('article')">Toggle Text</button>
+        <button (click)="toggleEl('image')">Toggle Image</button>
+        <button (click)="toggleEl('video')">Toggle Video</button>
+    </div>
+
+    <div>
+        <div *ngIf="activeElement === 'image'">
+            <img src="https://images.unsplash.com/photo-1656998019079-a7f9182c12be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"
+                alt="">
+        </div>
+
+        <div *ngIf="activeElement === 'video'">
+            <iframe width="1350" height="526" src="https://www.youtube.com/embed/Ata9cSC2WpM"
+                title="Angular in 100 Seconds" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+
+        <div *ngIf="activeElement === 'article'">
+            <h1>Some Random Text</h1>
+
+            <article>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum, minima illo? Eligendi voluptatibus
+                    animi, velit non culpa sint inventore a eaque eum. Repellat a eius, obcaecati minus ut explicabo
+                    facilis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum, minima illo? Eligendi voluptatibus
+                    animi, velit non culpa sint inventore a eaque eum. Repellat a eius, obcaecati minus ut explicabo
+                    facilis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum, minima illo? Eligendi voluptatibus
+                    animi, velit non culpa sint inventore a eaque eum. Repellat a eius, obcaecati minus ut explicabo
+                    facilis.</p>
+            </article>
+        </div>
+
+        <p [ngClass]="activeElement" [ngStyle]="{'background-color':bgColor}" *ngIf="activeElement">
+            {{activeElement | titlecase}} was clicked {{getCount(activeElement)}} times
+        </p>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<p>Welcome {{name}} to our Angular Course</p>
+
+<form>
+    <div class="form-control">
+        <label for="name">Student Name</label>
+        <input type="text" name="name" id="name" [(ngModel)]="name">
+    </div>
+
+    <button class="btn btn-success" [disabled]="allowAdd">Add Student</button>
+    <button class="btn btn-primary" (click)="update()">Update Student</button>
+</form>
